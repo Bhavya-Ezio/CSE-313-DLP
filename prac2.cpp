@@ -1,6 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
@@ -23,8 +24,13 @@ int main()
 
     cout << "Enter the Initial State: ";
     cin >> currState;
-    cout << "Enter the Final State: ";
-    cin >> finalState;
+    int numFinalStates;
+    cout << "Enter the number of Final States: ";
+    cin >> numFinalStates;
+    vector<char> finalStates(numFinalStates);
+    cout << "Enter the Final States: ";
+    for (char &finalStateChar : finalStates)
+        cin >> finalStateChar;
 
     unordered_map<string, char> table;
     for (const char &stateChar : states)
@@ -45,6 +51,6 @@ int main()
     for (char inputChar : inpString)
         currState = table[string(1, currState) + inputChar];
 
-    cout << (currState == finalState ? "String is Valid" : "String is Invalid");
+    cout << (find(finalStates.begin(), finalStates.end(), currState) != finalStates.end() ? "String is Valid" : "String is Invalid");
     return 0;
 }
