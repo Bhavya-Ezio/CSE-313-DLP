@@ -17,26 +17,30 @@ void addToken(vector<pair<string, string>> &tokens, const string &word, bool c =
     {
         tokens.push_back({"keyword", word});
     }
-    else
+    else if (isdigit(word[0]))
     {
-        if (isdigit(word[0]))
+        // Check if the entire word is a number
+        bool isNumber = all_of(word.begin(), word.end(), ::isdigit);
+        if (isNumber)
         {
-            if(!c) cerr << "Error: Identifier '" << word << "' cannot start with a digit." << endl;
-            else tokens.push_back({"constant", word});
+            tokens.push_back({"constant", word});
         }
-
         else
         {
-            tokens.push_back({"identifier", word});
-            if (find(identifiers.begin(), identifiers.end(), word) == identifiers.end())
-                symbols.emplace(word);
+            cout <<"Error: "<< word << " Invalid lexeme"<<endl;
         }
+    }
+    else
+    {
+        tokens.push_back({"identifier", word});
+        if (find(identifiers.begin(), identifiers.end(), word) == identifiers.end())
+            symbols.emplace(word);
     }
 }
 
 int main()
 {
-    ifstream f("prac3Inp1.c");
+    ifstream f("prac3Inp3.c");
 
     if (!f.is_open())
     {
@@ -81,21 +85,11 @@ int main()
                 if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
                 {
                     word += c;
-                    if (constant)
-                        constant = false;
                 }
                 else if (c >= '0' && c <= '9')
                 {
-                    if (word.empty())
-                    {
-                        constant = true;
-                        word += c;
-                    }
-                    else
-                    {
-                        addToken(tokens, word);
-                        word = "";
-                    }
+                    // Continue building the word if it already contains digits
+                    word += c;
                 }
                 else if (c == ',' || c == ';' || c == '.' || c == '(' || c == ')' || c == '{' || c == '}' || c == '[' || c == ']')
                 {
@@ -106,7 +100,7 @@ int main()
                     else
                     {
                         if (!word.empty())
-                            addToken(tokens, word, constant);
+                            addToken(tokens, word);
                         word = "";
                         tokens.push_back({"punctuation", string(1, c)});
                     }
@@ -158,7 +152,7 @@ int main()
                     else
                     {
                         if (!word.empty())
-                            addToken(tokens, word, constant);
+                            addToken(tokens, word);
                         word = "";
                     }
                 }
@@ -170,6 +164,7 @@ int main()
         }
     }
 
+    cout<<endl;
     for (auto str : tokens)
         cout << str.first << " : " << str.second << endl;
 
