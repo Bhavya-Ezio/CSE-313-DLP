@@ -285,30 +285,29 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 	*yy_cp = '\0'; \
 	yy_c_buf_p = yy_cp;
 
-#define YY_NUM_RULES 8
-#define YY_END_OF_BUFFER 9
-static yyconst short int yy_accept[16] =
+#define YY_NUM_RULES 2
+#define YY_END_OF_BUFFER 3
+static yyconst short int yy_accept[9] =
     {   0,
-        0,    0,    9,    7,    2,    6,    3,    1,    5,    4,
-        2,    3,    5,    4,    0
+        0,    0,    3,    2,    2,    1,    1,    0
     } ;
 
 static yyconst int yy_ec[256] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    4,    1,    1,    5,    5,    1,    5,    1,    1,
-        1,    5,    1,    1,    1,    1,    1,    6,    6,    6,
-        6,    6,    6,    6,    6,    6,    6,    1,    1,    1,
-        1,    1,    1,    5,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        1,    1,    1,    1,    1,    1,    7,    7,    7,    7,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    2,    3,    1,    1,
 
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    7,    7,    7,    7,    7,    7,    7,    7,
-        7,    7,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -325,35 +324,29 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[8] =
+static yyconst int yy_meta[4] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1
+        1,    1,    2
     } ;
 
-static yyconst short int yy_base[16] =
+static yyconst short int yy_base[10] =
     {   0,
-        0,    0,   16,   17,   13,   17,   10,   17,    7,    5,
-        9,    6,    3,    1,   17
+        0,    0,    5,    6,    0,    6,    6,    6,    2
     } ;
 
-static yyconst short int yy_def[16] =
+static yyconst short int yy_def[10] =
     {   0,
-       15,    1,   15,   15,   15,   15,   15,   15,   15,   15,
-       15,   15,   15,   15,    0
+        8,    1,    8,    8,    9,    8,    8,    0,    8
     } ;
 
-static yyconst short int yy_nxt[25] =
+static yyconst short int yy_nxt[10] =
     {   0,
-        4,    5,    6,    7,    8,    9,   10,   14,   13,   12,
-       11,   14,   13,   12,   11,   15,    3,   15,   15,   15,
-       15,   15,   15,   15
+        4,    5,    6,    7,    8,    3,    8,    8,    8
     } ;
 
-static yyconst short int yy_chk[25] =
+static yyconst short int yy_chk[10] =
     {   0,
-        1,    1,    1,    1,    1,    1,    1,   14,   13,   12,
-       11,   10,    9,    7,    5,    3,   15,   15,   15,   15,
-       15,   15,   15,   15
+        1,    1,    1,    9,    3,    8,    8,    8,    8
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -367,21 +360,11 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 ".\\obj-3extra.l"
+#line 1 ".\\text.l"
 #define INITIAL 0
-#line 3 ".\\obj-3extra.l"
+#line 3 ".\\text.l"
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
-int word_count = 0; 
-int char_count = 0;
-int line_count = 1;
-int whiteSpace_count = 0;
-int tabSpace_count = 0;
-int specialChar_count = 0;
-int num_count = 0;
-#line 385 "lex.yy.c"
+#line 368 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -532,10 +515,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 16 ".\\obj-3extra.l"
+#line 6 ".\\text.l"
 
 
-#line 539 "lex.yy.c"
+#line 522 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -586,13 +569,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 16 )
+				if ( yy_current_state >= 9 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 17 );
+		while ( yy_base[yy_current_state] != 6 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -620,45 +603,15 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 18 ".\\obj-3extra.l"
-{ specialChar_count++; }
+#line 8 ".\\text.l"
+{printf("matched: %s",yytext);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 19 ".\\obj-3extra.l"
-{ tabSpace_count++; }
-	YY_BREAK
-case 3:
-YY_RULE_SETUP
-#line 20 ".\\obj-3extra.l"
-{ whiteSpace_count++; }
-	YY_BREAK
-case 4:
-YY_RULE_SETUP
-#line 21 ".\\obj-3extra.l"
-{ char_count+=strlen(yytext);word_count++; }
-	YY_BREAK
-case 5:
-YY_RULE_SETUP
-#line 22 ".\\obj-3extra.l"
-{ num_count++ ;}
-	YY_BREAK
-case 6:
-YY_RULE_SETUP
-#line 23 ".\\obj-3extra.l"
-{ line_count++; }
-	YY_BREAK
-case 7:
-YY_RULE_SETUP
-#line 24 ".\\obj-3extra.l"
-{}
-	YY_BREAK
-case 8:
-YY_RULE_SETUP
-#line 26 ".\\obj-3extra.l"
+#line 11 ".\\text.l"
 ECHO;
 	YY_BREAK
-#line 662 "lex.yy.c"
+#line 615 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -950,7 +903,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 16 )
+			if ( yy_current_state >= 9 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -985,11 +938,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 16 )
+		if ( yy_current_state >= 9 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 15);
+	yy_is_jam = (yy_current_state == 8);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1544,29 +1497,11 @@ int main()
 	return 0;
 	}
 #endif
-#line 26 ".\\obj-3extra.l"
+#line 11 ".\\text.l"
 
 
-int main(int argc, char **argv)
-{
-    FILE *file = fopen("input.txt", "r");
-    if (!file)
-    {
-        printf("could not open the file\n");
-        exit(1);
-    }
-    yyin = file;
+int main() {
+    printf("Enter a string: ");
     yylex();
-
-    printf("word count = %d\n",word_count);
-    printf("char count = %d\n",char_count);
-    printf("line count = %d\n",line_count);
-    printf("whiteSpace count = %d\n",whiteSpace_count);
-    printf("specialChar count = %d\n",specialChar_count);
-    printf("number count = %d\n",num_count);
-    printf("TabSpace count count = %d\n",num_count);
-    
-    
-    fclose(file);
     return 0;
 }
